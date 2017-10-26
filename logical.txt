@@ -1,0 +1,24 @@
+skier (userName, firstName, lastName, yearOfBirth)
+Primary Key userName
+
+club (id, name, cityName)
+Primary Key id
+Foreign Key cityName
+
+city (name, countyName)
+Primary Key name
+Foreign Key countyName references county(name)
+
+county (name)
+Primary Key name
+
+season (year)
+Primary Key year
+
+skidInTo (skierUserName, seasonYear, totalDistance)
+Primary Key skierUserName, seasonYear
+
+affiliatedWith (seasonYear, clubId, skierUserName)
+Primary Key seasonYear, clubId
+Foreign Key seasonYear references season(year)
+Foreign Key clubId references club(id)
