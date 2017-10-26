@@ -3,7 +3,7 @@ Primary Key userName
 
 club (id, name, cityName)
 Primary Key id
-Foreign Key cityName
+Foreign Key cityName references city(name)
 
 city (name, countyName)
 Primary Key name
@@ -22,3 +22,4 @@ affiliatedWith (seasonYear, clubId, skierUserName)
 Primary Key seasonYear, clubId
 Foreign Key seasonYear references season(year)
 Foreign Key clubId references club(id)
+Foreign Key skierUserName references skier(userName)
