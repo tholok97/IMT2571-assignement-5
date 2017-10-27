@@ -16,7 +16,7 @@ class Skier {
     }
 
     public function print() {
-        echo "CLUB (userName: $this->userName, firstName: $this->firstName, lastName: $this->lastName, yearOfBirth: $this->yearOfBirth)\n";
+        echo "SKIER (userName: $this->userName, firstName: $this->firstName, lastName: $this->lastName, yearOfBirth: $this->yearOfBirth)\n";
     }
 }
 
