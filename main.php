@@ -2,11 +2,12 @@
 
 include_once("database.php");
 
-$club = new Club(3, "superklubb", "gjovik");
-
 $db = new Database();
-$db->db->query('DELETE FROM club');
-$db->addClub($club);
+$db->wipeClean();
+
+$db->addCounty('Oppland');
+$db->addCity('Gjovik', 'Oppland');
+//$db->addClub(1, 'Superklubben', 'Gjøvik');
 
 echo "success!\n"
 

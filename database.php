@@ -15,7 +15,8 @@ class Database {
         } else {
             try {
                 $this->db = new PDO('mysql:host=localhost;' . 
-                    'dbname=assignement_5;charset=utf8mb4', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                    'dbname=assignement_5;charset=utf8mb4', 'root', '', 
+                    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             } catch (PDOException $ex) {
                 throw $ex;
             }
@@ -58,6 +59,8 @@ class Database {
 
     public function addCity($cityName, $countyName) {
 
+        echo $cityName . " - " . $countyName . "\n";
+
         $stmt = $this->db->prepare("INSERT INTO city VALUES (:cityName, ' .
             ':countyName)");
         $stmt->bindValue(':cityName', $cityName);
@@ -84,6 +87,16 @@ class Database {
             throw $ex;
 
         }
+    }
+
+    public function wipeClean() {
+        $this->db->query('DELETE FROM skier');
+        $this->db->query('DELETE FROM affiliatedWith');
+        $this->db->query('DELETE FROM club');
+        $this->db->query('DELETE FROM season');
+        $this->db->query('DELETE FROM skiedInTotal');
+        $this->db->query('DELETE FROM city');
+        $this->db->query('DELETE FROM county');
     }
 }
 
