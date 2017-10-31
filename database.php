@@ -2,6 +2,8 @@
 
 include_once("club.php");
 include_once("skier.php");
+include_once("city.php");
+include_once("county.php");
 
 // wrapper around mysql database
 class Database {
@@ -57,14 +59,12 @@ class Database {
         }
     }
 
-    public function addCity($cityName, $countyName) {
-
-        echo $cityName . " - " . $countyName . "\n";
+    public function addCity($city) {
 
         $stmt = $this->db->prepare("INSERT INTO city VALUES (:cityName, ' .
             ':countyName)");
-        $stmt->bindValue(':cityName', $cityName);
-        $stmt->bindValue(':countyName', $countyName);
+        $stmt->bindValue(':cityName', $city->name);
+        $stmt->bindValue(':countyName', $city->countyName);
 
         // try to run the query
         try {
@@ -75,10 +75,10 @@ class Database {
         }
     }
 
-    public function addCounty($countyName) {
+    public function addCounty($county) {
 
         $stmt = $this->db->prepare("INSERT INTO county VALUES (:countyName)");
-        $stmt->bindValue(':countyName', $countyName);
+        $stmt->bindValue(':countyName', $county->name);
 
         // try to run the query
         try {

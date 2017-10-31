@@ -4,15 +4,15 @@
 class City {
 
     public $name;
-    public $county;
+    public $countyName;
 
-    public function __construct($name, $county) {
+    public function __construct($name, $countyName) {
         $this->name = $name;
-        $this->county = $county;
+        $this->countyName = $countyName;
     }
 
     public function print() {
-        echo "CITY (name: $this->name, county: $this->county)\n";
+        echo "CITY (name: $this->name, countyName: $this->countyName)\n";
     }
 }
 
