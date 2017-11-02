@@ -20,3 +20,5 @@ if (!$doc->load('SkierLogs.xml')) {
     putInto($info, $db);
     p("success!");
 }
+
+?>
