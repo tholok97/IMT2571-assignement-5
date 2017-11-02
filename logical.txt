@@ -19,7 +19,7 @@ skidInTo (skierUserName, seasonYear, totalDistance)
 Primary Key skierUserName, seasonYear
 
 affiliatedWith (seasonYear, clubId, skierUserName)
-Primary Key seasonYear, clubId
+Primary Key seasonYear, clubId, skierUserName
 Foreign Key seasonYear references season(year)
 Foreign Key clubId references club(id)
 Foreign Key skierUserName references skier(userName)
