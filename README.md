@@ -3,5 +3,3 @@
 The goal of the assignement is to parse the 'SkierLogs.xml' file using DOM in php and put the information into a MySQL database using PDO.
 
 [The instructions](/instructions.md)
-
-*This project is very much WIP*
